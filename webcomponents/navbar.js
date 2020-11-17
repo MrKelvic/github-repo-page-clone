@@ -9,10 +9,9 @@ class TabBar extends HTMLElement{
         let mainDiv=this.createElement('div',['class','tab-bar']);
         mainDiv.setAttribute('id','tab-bar')
         let invisibleSpace=this.createElement('div',['class','tab-inv']);
-        // <img src="${window?.__GITHUB_DATA?.user?.avatarUrl||'./_kelvic.png'}">
         let invisibleUserInf=this.createElement('div',['id','inv-user-data'],`
             <div>
-                <img src="${'./_kelvic.png'}">
+                <img src="${window.__GITHUB_DATA?.user?.avatarUrl}">
             </div>
             <div>
                 <p>${window?.__GITHUB_DATA?.user?.name||'iamkelvic'}</p>
@@ -67,7 +66,6 @@ class TabBar extends HTMLElement{
         let e=document.createElement(tag);
         if(![null,undefined].includes(attrib)) e.setAttribute(attrib[0],attrib[1]);
         if(![null,undefined].includes(innerHTML)) e.innerHTML=innerHTML;
-        // if(attrib) e.setAttribute(attrib[0],attrib[1]);
         return e;
     }
     setData(){

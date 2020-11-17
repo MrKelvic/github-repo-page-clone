@@ -10,9 +10,7 @@ class userSide extends HTMLElement{
         let firstHalfDiv=this.createElement('div');
         let imacointainer=this.createElement('div',['class','image-half']);
         // populate image half
-        // let img=this.createElement('img',['src',window?.__GITHUB_DATA?.user?.avatarUrl||'./_kelvic.png']);
-        let img=this.createElement('img',['src',`./_kelvic.png`]);//temp
-
+        let img=this.createElement('img',['src',window?.__GITHUB_DATA?.user?.avatarUrl||'./_kelvic.png']);
         let imgSpan=this.createElement('div',['class','imgspan']);
         imgSpan.classList.add('pc')
         let di=this.createElement('div');
@@ -89,7 +87,6 @@ class userSide extends HTMLElement{
         return e;
     }
     setData(){
-    // console.log(window.__GITHUB_DATA)
         this.data={
             ff:[
                 {

@@ -35,9 +35,6 @@ a{
     display:grid;
     grid-template-columns:25% minmax(75%,200px);
     min-height:100vh;
-    /* height:180vh; */
-    /* max-width:1240px; */
-    /* padding:0px 25px; */
 }
 .hide{
     display:none !important;

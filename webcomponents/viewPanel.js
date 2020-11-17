@@ -4,7 +4,7 @@ class viewPanel extends HTMLElement{
         this.notIncluded=["Overview","Projects","Packages"];
     }
     //components
-    topSearchBarAndfilters(){
+    topSearchBarAndfilters(){//returns repository fliters
         let wrap=this.createElement('div',['class','topSearchAndFilters']);
         wrap.appendChild(this.createElement('input',['placeholder','Find a repository...']));
         let languages=window?.__GITHUB_DATA?.user?.repositories?.nodes;
@@ -36,15 +36,14 @@ class viewPanel extends HTMLElement{
         })
         return wrap;
     }
-    repositories(){
-        // console.log(new Intl.RelativeTimeFormat('en',{style:'narrow'}).format())
+    repositories(){//returns what show on repository panel
         let wrap=this.createElement('ul',['class','repoWrap']);
 
         for(let i of window.__GITHUB_DATA.user.repositories.nodes){
             let li=this.createElement('li',['class','list']);
-            if(i.description.length>49){
+            if(i.description.length>55){
                 i.description=[...i.description]
-                i.description.length=49
+                i.description.length=55
                 i.description=i.description.join('')
                 i.description+='...';
             } 
@@ -57,7 +56,6 @@ class viewPanel extends HTMLElement{
             let languages=this.createElement('ul',['class','languages']);
             if(i.languages.edges.length>0){
                 for(let lang of i.languages.edges){
-                    // console.log(lang)
                     languages.appendChild(this.createElement('li',null,`<span style="background:${lang.node.color}"></span> ${lang.node.name}`))
                 }
                 langAndUpdatedOn.appendChild(languages);
@@ -71,15 +69,13 @@ class viewPanel extends HTMLElement{
         return wrap;
     }
     render(){
-        this.topSearchBarAndfilters()
-        // console.log()
         let panel= this.getAttribute('panel');
         if(!panel) panel="Repositories";
         if(!this.notIncluded.includes(panel)){
             // repo panel
             let mainDiv=this.createElement('div',['class','main-wrap']);
             if(window?.__GITHUB_DATA){
-                mainDiv.appendChild(this.topSearchBarAndfilters())
+                mainDiv.appendChild(this.topSearchBarAndfilters())//changed complex nested element into functions
                 mainDiv.appendChild(this.repositories())
             }
             this.appendChild(mainDiv);
@@ -114,7 +110,6 @@ class viewPanel extends HTMLElement{
         else ul.style.display="none";
         let hide=id=="Language"?"Type":"Language";
         document.getElementById(hide).style.display="none"
-        // console.log(e,id)
     }
 }
 

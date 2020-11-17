@@ -66,7 +66,6 @@
    .image-half{
     max-width:110px;
     display:grid;
-       /* max-width:140px; */
    }
    .first-half>div{
        display:flex;

@@ -36,7 +36,6 @@
     border:1px solid var(--border-c);
     padding:7px 15px;
     background:var(--secondary);
-    /* place-items: center; */
     place-content:center;
     font-size:0.9em;
     border-radius:5px;
@@ -65,7 +64,6 @@
     padding:8px 15px;
     font-size:0.76em;
     position:relative;
-    /* color:var(--greyed); */
 }
 .btnWrap ul li:hover{
     background:var(--border-c);
@@ -78,9 +76,6 @@
 .typeWrap  li:first-child:hover{
     background:initial;
 }
-.btnWrap ul span{
-
-}
 .btnWrap ul>li i{
     margin:0px 10px;
     
@@ -89,9 +84,6 @@
     position: absolute;
     right: 5%;
     margin:0px;
-}
-.repoWrap{
-
 }
 .list{
     border-bottom:1px solid var(--border-c);
@@ -118,12 +110,6 @@
 }
 .repoInfo{
     width:75%;
-}
-.repname{
-
-}
-.repname span{
-
 }
 .descrip{
     margin:10px 0px;
