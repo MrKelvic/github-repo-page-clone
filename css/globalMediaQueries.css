@@ -1,0 +1,90 @@
+
+.mob{
+    display:none !important;
+    opacity:0;
+    visibility:hidden;
+}
+@media only screen and (max-width:1025px){
+    .main-wrap{
+        padding:2px 30px;
+    }
+    .foot ul{
+        place-content:center;
+    }
+    .foot ul>li{
+        margin:0px 8px;
+    }
+}
+
+@media only screen and (max-width:820px){
+    .max-width{
+        padding:0px;
+    }
+   .pc,.tab-inv{
+    display:none !important;
+    opacity:0;
+    visibility:hidden;
+   }
+   .mob{
+    display:inherit !important;
+    opacity:1;
+    visibility:inherit;
+   }
+   .grid{
+       display: unset;
+   }
+   .tab-bar{
+       margin-top:0px;
+   }
+   .tab-wrap{
+    display: flex;
+    width:95vw;
+    overflow-x: auto;
+   }
+   .main-wrap,.mainDiv{
+       padding:2px 15px;
+   }
+   .topSearchAndFilters{
+       display:grid;
+       padding: 10px 0px;
+   }
+   .usernameAndHandle{
+       margin-left:25px;
+   }
+   .topSearchAndFilters input{
+       width:100%;
+       padding:4px 2px;
+       margin-bottom:15px;
+   }
+   #inv-user-data{
+       padding-left:10px;
+   }
+   .mainDiv{
+       top:unset;
+       border-bottom:none;
+   }
+   .image-half{
+    max-width:110px;
+    display:grid;
+       /* max-width:140px; */
+   }
+   .first-half>div{
+       display:flex;
+       margin-bottom:20px;
+   }
+   .bio{
+       width:100%;
+   }
+   .interactBtn button{
+       width:9%;
+       display:inline-flex;
+    }
+    .ffbtn{
+        margin-right:4px;
+       width:85% !important;
+   }
+   .contact {
+        margin: 9px 0px;
+        margin-top: 22px;
+    }
+}

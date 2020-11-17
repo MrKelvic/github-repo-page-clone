@@ -1,0 +1,169 @@
+.out-of-scope{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    place-content: center;
+}
+.out-of-scope p{
+    height: fit-content;
+    font-size:0.9em;
+    margin-top: 60px;
+}
+.main-wrap{
+    padding:2px 10px;
+}
+.topSearchAndFilters{
+    display:flex;
+    padding: 15px 0px;
+    border-bottom:1px solid var(--border-c);
+}
+.topSearchAndFilters input{
+    width:70%;
+    height:22px;
+    border-radius:7px;
+    padding:4px 12px;
+    border:1px solid var(--border-c);
+    margin-right:18px;
+    font-size:0.9em;
+}
+.buttonWrap{
+    display:flex;
+}
+.btnWrap{
+    position:relative;
+}
+.btnWrap button{
+    border:1px solid var(--border-c);
+    padding:7px 15px;
+    background:var(--secondary);
+    /* place-items: center; */
+    place-content:center;
+    font-size:0.9em;
+    border-radius:5px;
+    color:var(--greyed);
+    margin-right:8px;
+    box-shadow:0px 0px 0px var(--greyed);
+    display:flex;
+}
+.btnWrap button>i{
+    font-size:0.8em;
+    display:block;
+    margin-left: 5px;
+}
+.btnWrap ul{
+    margin: 5px;
+    border:1px solid var(--border-c);
+    width:200px;
+    border-radius:5px;
+    overflow:hidden;
+    position:absolute;
+    background:var(--secondary);
+    z-index:1;
+}
+.btnWrap ul li{
+    border-top:1px solid var(--border-c);
+    padding:8px 15px;
+    font-size:0.76em;
+    position:relative;
+    /* color:var(--greyed); */
+}
+.btnWrap ul li:hover{
+    background:var(--border-c);
+    cursor:pointer;
+}
+.btnWrap ul  li:first-child{
+    font-weight:600;
+    border-top:none;
+}
+.typeWrap  li:first-child:hover{
+    background:initial;
+}
+.btnWrap ul span{
+
+}
+.btnWrap ul>li i{
+    margin:0px 10px;
+    
+}
+.btnWrap ul>li:first-child i{
+    position: absolute;
+    right: 5%;
+    margin:0px;
+}
+.repoWrap{
+
+}
+.list{
+    border-bottom:1px solid var(--border-c);
+    display:flex;
+    padding:25px 0px;
+    place-items:center;
+    position:relative;
+}
+.list a{
+    color:#0366d6;
+    font-size: 1.3em;
+    font-weight:600;
+}
+.list a:hover{
+    text-decoration:underline;
+}
+.isprivate{
+    margin: 0px 8px;
+    font-size: 0.78em;
+    padding: 2px 4px;
+    border-radius: 20px;
+    border:1px solid var(--border-c);
+    color:var(--greyed);
+}
+.repoInfo{
+    width:75%;
+}
+.repname{
+
+}
+.repname span{
+
+}
+.descrip{
+    margin:10px 0px;
+}
+.langAndUpdatedOn,.descrip{
+    font-size: 0.87em;
+    color:var(--greyed);
+}
+.langAndUpdatedOn{
+    margin-top:25px;
+    font-size: 0.8em;
+}
+.languages,.langAndUpdatedOn{
+    display: flex;
+}
+.languages{
+    margin-right:16px;
+}
+.languages li{
+    margin-right: 10px;
+}
+.languages li span{
+    width:12px;
+    height:12px;
+    border-radius:100%;
+    display:inline-block;
+}
+.updatedon{
+
+}
+.starbtn{
+    position: absolute;
+    right:1%;
+    border:1px solid var(--border-c);
+    padding:6px 12px;
+    background:var(--secondary);
+    border-radius:5px;
+    color:var(--greyed);
+    box-shadow:0px 0px 0px var(--greyed);
+}
+.starbtn i{
+    font-size:1.1em;
+}

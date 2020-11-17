@@ -1,0 +1,11 @@
+{
+  "name": "buycoinschallenge",
+  "version": "1.0.0",
+  "description": "A challenge posted on twitter 12/12/2020 by @ireaderinokun",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
