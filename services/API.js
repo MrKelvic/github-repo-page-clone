@@ -3,7 +3,7 @@ let Api=(url,method,body)=> {
   document.getElementById('loadStat').innerHTML=`Fetching Kelvic's github information...`;
     fetch(url, {
       headers:{
-          "Authorization":`bearer 03eb6b4be0dd7c95fc44bafac4f4ae22dcd6a2c7`
+          "Authorization":`bearer 102240c7d4f6fa4452008da694a0668bca0df056`
       },
       method:method, 
       body: JSON.stringify(body)

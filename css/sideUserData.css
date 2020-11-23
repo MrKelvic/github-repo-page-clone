@@ -7,9 +7,13 @@
 .first-half>span{
     padding: 5px;
     margin:5px 0px;
+    
 }
-.first-half>span p{
-    font-size:0.85em;
+.first-half>span p,#stst{
+    font-size:0.86em;
+    border: 1px solid var(--border-c);
+    border-radius: 3px;
+    padding: 5px;
 }
 .image-half{
     position:relative;

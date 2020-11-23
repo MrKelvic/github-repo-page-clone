@@ -11,19 +11,21 @@ function handleScroll(){
     let pcScreenHandleName=[...document.querySelectorAll('.usernameAndHandle')][0];
     let pcScreen=[...document.querySelectorAll('.usernameAndHandle p')][0];
     let hiddenInfo=document.getElementById('inv-user-data')
-    if(!elementInViewport(pcScreen)){
-        hiddenInfo.style.display="flex"
-        pcScreenHandleName.style.opacity="0"
-    }else{
-        if(hiddenInfo.style.display!=="none"){
-            hiddenInfo.style.display="none";
-            pcScreenHandleName.style.opacity="1";
-        } 
+    if(hiddenInfo){
+        if(!elementInViewport(pcScreen,80)){
+            hiddenInfo.style.display="flex"
+            pcScreenHandleName.style.opacity="0"
+        }else{
+            if(hiddenInfo.style.display!=="none"){
+                hiddenInfo.style.display="none";
+                pcScreenHandleName.style.opacity="1";
+            } 
+        }
     }
 }
-function elementInViewport(el) {
-    // check if an element is in the view port
-    var top = el.offsetTop+80;
+function elementInViewport(el,offSet) {
+    if(!el) return true;
+    var top = el.offsetTop+(offSet||1);
     var height = el.offsetHeight;
     return (top >= window.pageYOffset &&(top + height) <= (window.pageYOffset + window.innerHeight));
   }

@@ -6,6 +6,10 @@ class userSide extends HTMLElement{
         if(!window.__GITHUB_DATA) return 0;
         // what to render
         this.setData();
+        let trimedStats=window.__GITHUB_DATA.user.status.message.split(' ');
+        trimedStats.length=7;
+        trimedStats=trimedStats.join(' ');
+        document.getElementById('stst').innerHTML=trimedStats;
         let mainDiv=this.createElement('div',['class','mainDiv']);
         let firstHalf=this.createElement('div',['class','first-half']);
         let firstHalfDiv=this.createElement('div');
