@@ -3,6 +3,7 @@ class userSide extends HTMLElement{
         super();
     }
     render(){
+        if(!window.__GITHUB_DATA) return 0;
         // what to render
         this.setData();
         let mainDiv=this.createElement('div',['class','mainDiv']);
@@ -10,23 +11,23 @@ class userSide extends HTMLElement{
         let firstHalfDiv=this.createElement('div');
         let imacointainer=this.createElement('div',['class','image-half']);
         // populate image half
-        let img=this.createElement('img',['src',window?.__GITHUB_DATA?.user?.avatarUrl||'./_kelvic.png']);
+        let img=this.createElement('img',['src',window.__GITHUB_DATA.user.avatarUrl||'./_kelvic.png']);
         let imgSpan=this.createElement('div',['class','imgspan']);
         imgSpan.classList.add('pc')
         let di=this.createElement('div');
         di.appendChild(this.createElement('i',['class','fa fa-smile-o']));
-        di.appendChild(this.createElement('p',['class','imgp'],window?.__GITHUB_DATA?.user?.status.message));
+        di.appendChild(this.createElement('p',['class','imgp'],window.__GITHUB_DATA.user.status.message));
         imgSpan.appendChild(di)
         imacointainer.appendChild(img),imacointainer.appendChild(imgSpan);
         firstHalfDiv.appendChild(imacointainer);//SUB
         // firstHalf.appendChild(imgSpan);
         let usernameAndHandleContainer=this.createElement('div',['class','usernameAndHandle']);
-        usernameAndHandleContainer.appendChild(this.createElement('p',['class','handle'],window?.__GITHUB_DATA?.user?.name||'iamkelvic'));
-        usernameAndHandleContainer.appendChild(this.createElement('p',null,window?.__GITHUB_DATA?.user?.login||'MrKelvic'));
+        usernameAndHandleContainer.appendChild(this.createElement('p',['class','handle'],window.__GITHUB_DATA.user.name||'iamkelvic'));
+        usernameAndHandleContainer.appendChild(this.createElement('p',null,window.__GITHUB_DATA.user.login||'MrKelvic'));
         firstHalfDiv.appendChild(usernameAndHandleContainer);
         firstHalf.appendChild(firstHalfDiv)//SUB
-        firstHalf.appendChild(this.createElement('span',['class','mob'],`<p>${window?.__GITHUB_DATA?.user?.status.message}</p>`))
-        firstHalf.appendChild(this.createElement('p',['class','bio'],window?.__GITHUB_DATA?.user?.bio||'bio'));//SUB
+        firstHalf.appendChild(this.createElement('span',['class','mob'],`<p>${window.__GITHUB_DATA.user.status.message}</p>`))
+        firstHalf.appendChild(this.createElement('p',['class','bio'],window.__GITHUB_DATA.user.bio||'bio'));//SUB
 
         mainDiv.appendChild(firstHalf);
         let interactBtn=this.createElement('div',['class','interactBtn']);
@@ -91,29 +92,29 @@ class userSide extends HTMLElement{
             ff:[
                 {
                     name:'followers',
-                    count:window?.__GITHUB_DATA?.user?.followers?.totalCount,
+                    count:window.__GITHUB_DATA.user.followers.totalCount||'1',
                     icon:`user-o`
                 },
                 {
                     name:'following',
-                    count:window?.__GITHUB_DATA?.user?.following?.totalCount,
+                    count:window.__GITHUB_DATA.user.following.totalCount||'1',
                 },
                 {
                     name:'',
-                    count:window?.__GITHUB_DATA?.user?.starredRepositories?.totalCount,
+                    count:window.__GITHUB_DATA.user.starredRepositories.totalCount||'1',
                     icon:`star-o`
                 },
             ],
             r:[
                 {
                    icon:`map-marker`,
-                   name:window?.__GITHUB_DATA?.user?.location||'Ghana'
+                   name:window.__GITHUB_DATA.user.location||'Ghana'
                 },
                 {
                     icon:`twitter`,
-                    name:window?.__GITHUB_DATA?.user?.twitterUsername||'mrkelvic',
+                    name:window.__GITHUB_DATA.user.twitterUsername||'mrkelvic',
                     type:'a',
-                    attrib:['href',`https://twitter.com/${window?.__GITHUB_DATA?.user?.twitterUsername||'mrkelvic'}`]
+                    attrib:['href',`https://twitter.com/${window.__GITHUB_DATA.user.twitterUsername||'mrkelvic'}`]
                  }
             ]
         }

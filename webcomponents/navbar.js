@@ -1,20 +1,21 @@
 class TabBar extends HTMLElement{
     constructor(){
         super()
-        this.setData()
     }
     render(){
         // what to render
+        if(!window.__GITHUB_DATA) return 0;
+        // console.log('stilll')
         this.setData()
         let mainDiv=this.createElement('div',['class','tab-bar']);
         mainDiv.setAttribute('id','tab-bar')
         let invisibleSpace=this.createElement('div',['class','tab-inv']);
         let invisibleUserInf=this.createElement('div',['id','inv-user-data'],`
             <div>
-                <img src="${window.__GITHUB_DATA?.user?.avatarUrl}">
+                <img src="${window.__GITHUB_DATA.user.avatarUrl||'./_kelvic.png'}">
             </div>
             <div>
-                <p>${window?.__GITHUB_DATA?.user?.name||'iamkelvic'}</p>
+                <p>${window.__GITHUB_DATA.user.name||'iamkelvic'}</p>
                 <button>Follow</button>
             </div>
         `)
@@ -77,7 +78,7 @@ class TabBar extends HTMLElement{
                 },
                 {
                     name:'Repositories',
-                    count:window?.__GITHUB_DATA?.user?.repositories?.nodes.length,
+                    count:window.__GITHUB_DATA.user.repositories.nodes.length||'0',
                     icon:`file-o`
                 },
                 {

@@ -7,7 +7,7 @@ class viewPanel extends HTMLElement{
     topSearchBarAndfilters(){//returns repository fliters
         let wrap=this.createElement('div',['class','topSearchAndFilters']);
         wrap.appendChild(this.createElement('input',['placeholder','Find a repository...']));
-        let languages=window?.__GITHUB_DATA?.user?.repositories?.nodes;
+        let languages=window.__GITHUB_DATA.user.repositories.nodes;
         let localData={
             Type:['All','Sources','Forks','Archived','Mirrors'],
             Language:['All']
@@ -69,12 +69,13 @@ class viewPanel extends HTMLElement{
         return wrap;
     }
     render(){
+        if(!window.__GITHUB_DATA) return 0;
         let panel= this.getAttribute('panel');
         if(!panel) panel="Repositories";
         if(!this.notIncluded.includes(panel)){
             // repo panel
             let mainDiv=this.createElement('div',['class','main-wrap']);
-            if(window?.__GITHUB_DATA){
+            if(window.__GITHUB_DATA){
                 mainDiv.appendChild(this.topSearchBarAndfilters())//changed complex nested element into functions
                 mainDiv.appendChild(this.repositories())
             }

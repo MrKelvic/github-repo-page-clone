@@ -27,7 +27,7 @@ a{
 }
 #loader{
     height:90.3vh;
-    display:flex;
+    display:grid;
     place-items:center;
     place-content:center;
 }

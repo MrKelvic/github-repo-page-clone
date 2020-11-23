@@ -86,4 +86,8 @@
         margin: 9px 0px;
         margin-top: 22px;
     }
+    .languages li {
+        margin-right: 8px;
+        display: flex;
+    }
 }
